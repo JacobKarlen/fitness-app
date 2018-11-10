@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Row, Col, Button} from 'antd';
+import ExerciseMenu from "./containers/ExerciseMenu";
+import ExerciseCard from "./containers/ExerciseCard";
 import './App.css';
+
+const workoutProgram = {
+    id1: {
+        exerciseName: "Bench Press",
+        defaultWeight: 70,
+        defaultSets: 5,
+        defaultReps: 5
+    },
+    id2: {
+    exerciseName: "Bench Press",
+        defaultWeight: 85,
+        defaultSets: 5,
+        defaultReps: 5
+    }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+          <Row>
+              <Col xs={24} lg={8}>
+                  <ExerciseMenu />
+              </Col>
+              <Col xs={24} lg={16}>
+                  <ExerciseCard exerciseName={"Bench press"}/>
+              </Col>
+          </Row>
+
+
       </div>
     );
   }
